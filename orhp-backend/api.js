@@ -12,7 +12,8 @@ const key = 'AEq43bbUhBo2NC5MtPVG30kXcMguHetALvU8QXDCMgn602Yu1iiVpPWB7WAIcQ8wGGH
 const cosmosClient = new CosmosClient({ endpoint, key });
 const databaseName = `nbev-orhp-test`;
 
-const usersContainer = cosmosClient.database(databaseName).container('users');
+const usersContainer = cosmosClient.database(databaseName).container('user');
+const policyContainer = cosmosClient.database(databaseName).container('policy');
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
@@ -28,7 +29,7 @@ app.get('/api/users', async (req, res) => {
 })
 // GET /api/users/:id
 app.get('/api/users/:id', async (req, res) => {
-  const { resources } = await usersContainer.items.readAll().fetchAll();
+  const { resources } = await usersContainer.item(req.params.id).read();
   res.send(resources);
 })
 // POST /api/users
@@ -43,6 +44,22 @@ app.put('/api/users/:id', async (req, res) => {
 })
 // DELETE /api/users/:id
 app.delete('/api/users/:id', async (req, res) => {
-  const { resources } = await usersContainer.items.readAll().fetchAll();
+  const { resources } = await usersContainer.item(req.params.id).delete();
+  res.send(resources);
+})
+
+/*
+******** policy REST Services ********
+*/
+
+// GET /api/policy
+app.get('/api/policy', async (req, res) => {
+  const { resources } = await policyContainer.items.readAll().fetchAll();
+  res.send(resources);
+})
+
+// GET /api/policy/:id
+app.get('/api/policy/:id', async (req, res) => {
+  const { resources } = await policyContainer.item(req.params.id).read();
   res.send(resources);
 })
