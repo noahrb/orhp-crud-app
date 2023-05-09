@@ -1,0 +1,6 @@
+/Users/noahbeverly/Documents/repos/orhp-crud-app/orhp-java/src/main/java/cosmosdb/repository/UserRepository.java
+/Users/noahbeverly/Documents/repos/orhp-crud-app/orhp-java/src/main/java/cosmosdb/entity/User.java
+/Users/noahbeverly/Documents/repos/orhp-crud-app/orhp-java/src/main/java/cosmosdb/AzureCosmosDbApplication.java
+/Users/noahbeverly/Documents/repos/orhp-crud-app/orhp-java/src/main/java/cosmosdb/service/UserService.java
+/Users/noahbeverly/Documents/repos/orhp-crud-app/orhp-java/src/main/java/cosmosdb/config/AzureCosmosDbConfiguration.java
+/Users/noahbeverly/Documents/repos/orhp-crud-app/orhp-java/src/main/java/cosmosdb/controller/UserController.java

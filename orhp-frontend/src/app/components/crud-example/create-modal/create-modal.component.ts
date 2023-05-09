@@ -1,10 +1,10 @@
 import {
   Component,
   EventEmitter,
-  HostListener,
   Input,
-  Output,
+  Output
 } from '@angular/core';
+import { Observable, of } from 'rxjs';
 import { Policy } from 'src/app/models/Policy';
 import { PolicyService } from 'src/app/services/policy.service';
 import { UserService } from 'src/app/services/user.service';
@@ -19,12 +19,20 @@ export class CreateModalComponent {
   @Input() modalOpen: any;
   @Input() policies: Array<Policy> = [];
   loader: boolean = false;
+  searchValue: string = '';
+  filteredPolicies$: Observable<Array<Policy>> = new Observable();
+  selectedPolicies: Array<Policy> = [];
 
   constructor(private userService: UserService, private policyService: PolicyService) {
     this.policyService.getAllPolicy().subscribe((res: any) => {
       this.policies = res;
+      this.getFilteredPolicies$
     });
   }
+
+  getFilteredPolicies$: Observable<Array<Policy>> = of(this.policies.filter((policy) =>
+    policy.id.toString().includes(this.searchValue)
+    ));
 
   public clickCloseModal(): void {
     this.closeModal.emit();
@@ -39,5 +47,14 @@ export class CreateModalComponent {
         this.loader = false;
         this.clickCloseModal();
       });
+  }
+
+  public selectOption(policy: Policy) {
+    if(this.selectedPolicies.includes(policy)) {
+      this.selectedPolicies.splice(this.selectedPolicies.indexOf(policy), 1);
+      return;
+    } else {
+      this.selectedPolicies.push(policy);
+    }
   }
 }

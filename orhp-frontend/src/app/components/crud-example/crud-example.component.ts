@@ -18,7 +18,7 @@ export class CrudExampleComponent {
   editUserModalOpen: boolean = false;
 
   activePolicy: Policy = {
-    id: 0, addresses: 0, monthly_premium: 0, deductible: 0 };
+    id: 0, monthly_premium: 0, deductible: 0 };
 
   activeUser: User = {
     id: 0,

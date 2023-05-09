@@ -24,18 +24,11 @@ export class PolicyModalComponent {
 
   @Input() policy: Policy = {
     id: 0,
-    addresses: 0,
     monthly_premium: 0,
     deductible: 0,
   };
   
   constructor(private userService: UserService) {}
-  
-  // ngOnChanges(changes: SimpleChanges): void {
-  //   console.log(this.policy);
-  //   console.log(changes);
-  //   this.policy = changes.policy.currentValue;
-  // }
 
   public clickCloseModal(): void {
     this.closeModal.emit();

@@ -90,6 +90,7 @@
                           id="input-group-search"
                           class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-2 py-1"
                           placeholder="Search policies"
+                          [value]="searchValue"
                         />
                       </div>
                     <ul
@@ -104,6 +105,7 @@
                             id="checkbox-item-11"
                             type="checkbox"
                             value=""
+                            (click)="selectOption(policy)"
                             class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
                           />
                           <label

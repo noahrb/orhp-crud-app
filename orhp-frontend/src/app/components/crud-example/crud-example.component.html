@@ -75,16 +75,20 @@
               <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
                 {{ row.name }}
               </td>
-              <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+              <td class="pl-6 py-4 whitespace-no-wrap border-b border-gray-200">
                 {{ row.email }}
               </td>
               <td
-                *ngFor="let policy of row.policies"
-                class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 text-indigo-600 underline"
+                class="px-6 pl-6 py-4 whitespace-no-wrap border-b border-gray-200"
               >
-                <a (click)="openPolicyModal(policy)">{{ policy }}</a>
+                <a
+                  *ngFor="let policy of row.policies"
+                  (click)="openPolicyModal(policy.id)"
+                  class="py-4 px-1 text-indigo-600 underline"
+                >
+                  {{ policy }}
+                </a>
               </td>
-
               <td
                 class="text-sm font-medium leading-5 text-center whitespace-no-wrap border-b border-gray-200"
               >
