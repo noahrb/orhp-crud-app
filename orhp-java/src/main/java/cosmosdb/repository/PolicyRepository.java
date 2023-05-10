@@ -15,7 +15,7 @@ public interface PolicyRepository extends CosmosRepository<Policy, String> {
     List<Policy> findAll();
 
     void deleteById(String id);
-    
+
     Policy save(Policy user);
 
 }

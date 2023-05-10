@@ -1,7 +1,6 @@
 import {
   Component,
   EventEmitter,
-  HostListener,
   Input,
   Output,
 } from '@angular/core';
@@ -30,8 +29,10 @@ export class EditUserModalComponent {
   loader: boolean = false;
   policies: Array<any> = [];
 
-
-  constructor(private userService: UserService, private policyService: PolicyService) {
+  constructor(
+    private userService: UserService,
+    private policyService: PolicyService
+  ) {
     this.policyService.getAllPolicy().subscribe((res: any) => {
       this.policies = res;
       this.selectedPolicies = this.user.policies.map((policy) => policy);
@@ -45,7 +46,13 @@ export class EditUserModalComponent {
   public onClickSubmit(data: any) {
     this.loader = true;
     this.userService
-      .updateUser(this.user.id, data.email.value, data.name.value, data.phone.value, this.selectedPolicies)
+      .updateUser(
+        this.user.id,
+        data.email.value,
+        data.name.value,
+        data.phone.value,
+        this.selectedPolicies
+      )
       .subscribe((res) => {
         this.loader = false;
         this.clickCloseModal();
@@ -53,8 +60,11 @@ export class EditUserModalComponent {
   }
 
   public selectOption(policy: Policy) {
-    if(this.selectedPolicies.includes(policy.id.toString())) {
-      this.selectedPolicies.splice(this.selectedPolicies.indexOf(policy.id.toString()), 1);
+    if (this.selectedPolicies.includes(policy.id.toString())) {
+      this.selectedPolicies.splice(
+        this.selectedPolicies.indexOf(policy.id.toString()),
+        1
+      );
       return;
     } else {
       this.selectedPolicies.push(policy.id.toString());

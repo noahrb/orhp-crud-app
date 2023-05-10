@@ -42,8 +42,8 @@ public class PolicyService {
 
     public void addUserToPolicies(ArrayList<String> policyIds, String userId) {
         List<Policy> policies = findAll();
-        for(Policy policy: policies) {
-            if(policyIds.contains(policy.getId())) {
+        for (Policy policy : policies) {
+            if (policyIds.contains(policy.getId())) {
                 ArrayList<String> users = policy.getUsers();
                 users.add(userId);
                 policy.setUsers(users);
@@ -54,10 +54,10 @@ public class PolicyService {
 
     public void removeUserFromAllPolicies(String userId) {
         List<Policy> policies = findAll();
-        for(Policy policy: policies) {
+        for (Policy policy : policies) {
             ArrayList<String> users = policy.getUsers();
-            for(String user : users) {
-                if(user.equals(userId)) {
+            for (String user : users) {
+                if (user.equals(userId)) {
                     users.remove(user);
                     break;
                 }
@@ -69,11 +69,11 @@ public class PolicyService {
 
     public void removeUserFromPolicies(String userId, List<String> policyIds) {
         List<Policy> policies = findAll();
-        for(Policy policy: policies) {
-            if(policyIds.contains(policy.getId())) {
+        for (Policy policy : policies) {
+            if (policyIds.contains(policy.getId())) {
                 ArrayList<String> users = policy.getUsers();
-                for(String user : users) {
-                    if(user.equals(userId)) {
+                for (String user : users) {
+                    if (user.equals(userId)) {
                         users.remove(user);
                         break;
                     }
@@ -87,15 +87,15 @@ public class PolicyService {
     public void updatePolicy(String id, Policy policy) {
         Optional<Policy> policyOptional = findById(id);
         System.out.println("******************* Updating policy: " + policyOptional.get());
-        if(policyOptional.isPresent()) {
+        if (policyOptional.isPresent()) {
             ArrayList<String> userIdsToAdd = new ArrayList<>();
             ArrayList<String> userIdsToRemove = new ArrayList<>();
 
             Policy policyToUpdate = policyOptional.get();
             List<String> existingPolicyUsers = policyToUpdate.getUsers();
             System.out.println("******************* Existing policy users: " + existingPolicyUsers);
-            for(String user : existingPolicyUsers) {
-                if(!policy.getUsers().contains(user)) {
+            for (String user : existingPolicyUsers) {
+                if (!policy.getUsers().contains(user)) {
                     userIdsToRemove.add(user);
                     System.out.println("***************** User ids to remove: " + userIdsToRemove);
                     userService.removePolicyFromUsers(userIdsToRemove, id);
@@ -103,10 +103,11 @@ public class PolicyService {
             }
 
             List<String> newPolicyUsers = policy.getUsers();
-            for(String userId : newPolicyUsers) {
-                if(!existingPolicyUsers.contains(userId)) {
+            for (String userId : newPolicyUsers) {
+                if (!existingPolicyUsers.contains(userId)) {
                     userIdsToAdd.add(userId);
-                    System.out.println("******************* Adding user to policy: " + policyToUpdate.getId() + " user: " + userId);
+                    System.out.println("******************* Adding user to policy: " + policyToUpdate.getId()
+                            + " user: " + userId);
                     userService.addPolicyToUsers(userIdsToAdd, id);
                 }
             }

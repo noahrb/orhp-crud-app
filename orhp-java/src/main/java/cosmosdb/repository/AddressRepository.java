@@ -15,7 +15,7 @@ public interface AddressRepository extends CosmosRepository<Address, String> {
     List<Address> findAll();
 
     void deleteById(String id);
-    
+
     Address save(Address user);
 
 }

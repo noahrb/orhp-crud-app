@@ -103,5 +103,4 @@ export class CrudExampleComponent {
     this.createPolicyModalOpen = false;
     this.refreshData();
   }
-
 }

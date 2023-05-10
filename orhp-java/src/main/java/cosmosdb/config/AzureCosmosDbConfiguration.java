@@ -31,7 +31,7 @@ public class AzureCosmosDbConfiguration extends AbstractCosmosConfiguration {
     public CosmosDBConfig getConfig() {
         this.cosmosKeyCredential = new CosmosKeyCredential(key);
         CosmosDBConfig cosmosdbConfig = CosmosDBConfig.builder(uri, this.cosmosKeyCredential, dbName)
-            .build();
+                .build();
         return cosmosdbConfig;
     }
 }

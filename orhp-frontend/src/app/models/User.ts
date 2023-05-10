@@ -1,6 +1,3 @@
-import { Address } from "./Address";
-import { Policy } from "./Policy";
- 
 export interface User {
   id: string,
   name: string,

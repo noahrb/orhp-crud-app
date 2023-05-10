@@ -1,6 +1,5 @@
 package cosmosdb.service;
 
-import com.azure.data.cosmos.PartitionKey;
 import cosmosdb.entity.Address;
 import cosmosdb.repository.AddressRepository;
 

@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
-import { catchError, map, retry } from 'rxjs/operators';
 import { User } from '../models/User';
 
 @Injectable()
@@ -54,7 +52,7 @@ export class UserService {
 
   deleteUser(id: string) {
     return this.http.post<User>(this.baseUrl + '/user/delete/' + id, {
-      id: id
+      id: id,
     });
   }
 }

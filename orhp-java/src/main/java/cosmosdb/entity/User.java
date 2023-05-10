@@ -3,12 +3,9 @@ package cosmosdb.entity;
 import com.microsoft.azure.spring.data.cosmosdb.core.mapping.Document;
 import com.microsoft.azure.spring.data.cosmosdb.core.mapping.PartitionKey;
 
-import org.springframework.data.annotation.Id;
-
 import lombok.Getter;
 import lombok.Setter;
 import java.util.ArrayList;
-import java.util.List;
 
 @Getter
 @Setter

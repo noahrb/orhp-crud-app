@@ -5,7 +5,6 @@ import cosmosdb.service.UserService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -40,7 +39,7 @@ public class UserController {
     public void update(@PathVariable String id, @RequestBody User user) {
         userService.updateUser(id, user);
     }
-    
+
     @GetMapping(value = "/{id}")
     public Optional<User> get(@PathVariable String id) {
         return userService.findById(id);
@@ -50,7 +49,7 @@ public class UserController {
     public List<User> getAll() {
         return userService.findAll();
     }
-    
+
     @PostMapping(value = "/delete/{id}")
     public void delete(@PathVariable String id) {
         userService.delete(id);

@@ -25,17 +25,48 @@
                 <p class="text-sm text-gray-500">
                   Please fill in the forms below to create your user:
                 </p>
-                <form #policyRegistration class="space-y-2 pt-4" (ngSubmit)="onClickSubmit(policyRegistration)" method="POST">
+                <form
+                  #policyRegistration
+                  class="space-y-2 pt-4"
+                  (ngSubmit)="onClickSubmit(policyRegistration)"
+                  method="POST"
+                >
                   <div>
-                    <label for="policyId" class="block text-sm font-medium leading-6 text-gray-900">Policy Id: {{ policy.id }}</label>
+                    <label
+                      for="policyId"
+                      class="block text-sm font-medium leading-6 text-gray-900"
+                      >Policy Id: {{ policy.id }}</label
+                    >
                   </div>
                   <div>
-                    <label for="monthlyPremium" class="block text-sm font-medium leading-6 text-gray-900">Monthly Premium</label>
-                      <input id="monthlyPremium" name="monthlyPremium" type="text" value="{{ policy.monthly_premium }}" required class="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                    <label
+                      for="monthlyPremium"
+                      class="block text-sm font-medium leading-6 text-gray-900"
+                      >Monthly Premium</label
+                    >
+                    <input
+                      id="monthlyPremium"
+                      name="monthlyPremium"
+                      type="text"
+                      value="{{ policy.monthly_premium }}"
+                      required
+                      class="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    />
                   </div>
                   <div>
-                    <label for="deductible" class="block text-sm font-medium leading-6 text-gray-900">Deductible</label>
-                      <input id="deductible" name="deductible" type="text" value="{{ policy.deductible }}" required class="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                    <label
+                      for="deductible"
+                      class="block text-sm font-medium leading-6 text-gray-900"
+                      >Deductible</label
+                    >
+                    <input
+                      id="deductible"
+                      name="deductible"
+                      type="text"
+                      value="{{ policy.deductible }}"
+                      required
+                      class="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    />
                   </div>
                   <div
                     id="dropdownSearch"
@@ -44,16 +75,8 @@
                     <label
                       for="policy"
                       class="block text-sm font-medium leading-6 text-gray-900 pt-2 pl-2"
-                      >Select Applicable Users:</label>
-                    <!-- <div class="relative pl-2">
-                        <input
-                          type="text"
-                          id="input-group-search"
-                          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-2 py-1"
-                          placeholder="Search policies"
-                          [value]="searchValue"
-                        />
-                      </div> -->
+                      >Select Applicable Users:</label
+                    >
                     <ul
                       class="h-48 px-3 pb-3 overflow-y-auto text-sm text-gray-700"
                       aria-labelledby="dropdownSearchButton"
@@ -73,7 +96,7 @@
                           <label
                             for="checkbox-item-11"
                             class="w-full ml-2 text-sm font-medium text-gray-900 rounded"
-                            >{{user.id}}
+                            >{{ user.id }}
                           </label>
                         </div>
                       </li>

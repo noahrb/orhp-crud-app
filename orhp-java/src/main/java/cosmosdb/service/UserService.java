@@ -18,7 +18,6 @@ public class UserService {
     @Autowired
     private PolicyService policyService;
 
-
     @Autowired
     public UserService(UserRepository repository) {
         this.repository = repository;
@@ -42,11 +41,10 @@ public class UserService {
         policyService.removeUserFromAllPolicies(userId);
     }
 
-
     public void addPolicyToUsers(ArrayList<String> userIds, String policyId) {
         List<User> users = findAll();
-        for(User user: users) {
-            if(userIds.contains(user.getId())) {
+        for (User user : users) {
+            if (userIds.contains(user.getId())) {
                 ArrayList<String> policies = user.getPolicies();
                 policies.add(policyId);
                 user.setPolicies(policies);
@@ -57,10 +55,10 @@ public class UserService {
 
     public void removePolicyFromAllUsers(String policyId) {
         List<User> users = findAll();
-        for(User user: users) {
+        for (User user : users) {
             ArrayList<String> policies = user.getPolicies();
-            for(String policy : policies) {
-                if(policy.equals(policyId)) {
+            for (String policy : policies) {
+                if (policy.equals(policyId)) {
                     policies.remove(policy);
                     break;
                 }
@@ -72,11 +70,11 @@ public class UserService {
 
     public void removePolicyFromUsers(ArrayList<String> userIds, String policyId) {
         List<User> users = findAll();
-        for(User user: users) {
-            if(userIds.contains(user.getId())) {
+        for (User user : users) {
+            if (userIds.contains(user.getId())) {
                 ArrayList<String> policies = user.getPolicies();
-                for(String policy : policies) {
-                    if(policy.equals(policyId)) {
+                for (String policy : policies) {
+                    if (policy.equals(policyId)) {
                         policies.remove(policy);
                         break;
                     }
@@ -89,22 +87,22 @@ public class UserService {
 
     public void updateUser(String id, User user) {
         Optional<User> userOptional = findById(id);
-        if(userOptional.isPresent()) {
+        if (userOptional.isPresent()) {
             ArrayList<String> policyIdsToAdd = new ArrayList<>();
             List<String> policyIdsToRemove = new ArrayList<>();
 
             User userToUpdate = userOptional.get();
             List<String> existingUserPolicies = userToUpdate.getPolicies();
-            for(String policyId : existingUserPolicies) {
-                if(!user.getPolicies().contains(policyId)) {
+            for (String policyId : existingUserPolicies) {
+                if (!user.getPolicies().contains(policyId)) {
                     policyIdsToRemove.add(policyId);
                     policyService.removeUserFromPolicies(id, policyIdsToRemove);
                 }
             }
 
             List<String> newUserPolicies = user.getPolicies();
-            for(String policyId : newUserPolicies) {
-                if(!existingUserPolicies.contains(policyId)) {
+            for (String policyId : newUserPolicies) {
+                if (!existingUserPolicies.contains(policyId)) {
                     policyIdsToAdd.add(policyId);
                     policyService.addUserToPolicies(policyIdsToAdd, id);
                 }
