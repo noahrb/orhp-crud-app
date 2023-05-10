@@ -6,22 +6,38 @@ import { User } from '../models/User';
 
 @Injectable()
 export class UserService {
-  baseUrl = "http://localhost:8080";
+  baseUrl = 'http://localhost:8080';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-  getAllUser() {
-    return this.http.get<User[]>(this.baseUrl + "/user");
+  getUser(id: string) {
+    return this.http.get<User>(this.baseUrl + '/user/' + id);
   }
 
-  saveNewPerson(id: string, name: string, email: string, phone: string, policies: Array<String>) {
-    return this.http.post<User>(this.baseUrl + "/user", {
+  getAllUser() {
+    return this.http.get<User[]>(this.baseUrl + '/user');
+  }
+
+  saveNewPerson(
+    id: string,
+    name: string,
+    email: string,
+    phone: string,
+    policies: Array<String>
+  ) {
+    return this.http.post<User>(this.baseUrl + '/user', {
       id: id,
       name: name,
       email: email,
       phone: phone,
       policies: policies,
-      addresses: []
+      addresses: [],
+    });
+  }
+
+  deleteUser(id: string) {
+    return this.http.post<User>(this.baseUrl + '/user/delete/' + id, {
+      id: id
     });
   }
 }

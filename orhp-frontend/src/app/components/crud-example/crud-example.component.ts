@@ -27,13 +27,16 @@ export class CrudExampleComponent {
   };
 
   activeUser: User = {
-    id: 0,
+    id: '',
     name: '',
     email: '',
     phone: 0,
     policies: [],
     addresses: [],
   };
+
+  activeUserId: number = 0;
+
   policyService: any;
 
   constructor(private userService: UserService, policyService: PolicyService) {
@@ -60,18 +63,19 @@ export class CrudExampleComponent {
     this.refreshData();
   }
 
-  public openRemoveUserModal(name: string) {
+  public openRemoveUserModal(user: User) {
     this.removeUserModalOpen = true;
+    this.activeUser = user;
   }
 
   public closeRemoveUserModal(): void {
     this.removeUserModalOpen = false;
+    this.refreshData();
   }
 
-  public openPolicyModal(policy: number) {
+  public openPolicyModal(policy: string) {
     this.policyService.getPolicy(policy).subscribe((res: any) => {
       this.activePolicy = res[0];
-      console.log(this.activePolicy);
       this.policyModalOpen = true;
     });
   }
@@ -98,4 +102,5 @@ export class CrudExampleComponent {
     this.createPolicyModalOpen = false;
     this.refreshData();
   }
+
 }

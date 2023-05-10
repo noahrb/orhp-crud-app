@@ -39,6 +39,7 @@
           *ngIf="removeUserModalOpen"
           (closeModal)="closeRemoveUserModal()"
           [modalOpen]="removeUserModalOpen"
+          [user]="activeUser"
         ></app-remove-user-modal>
 
         <app-policy-modal
@@ -95,7 +96,7 @@
               >
                 <a
                   *ngFor="let policy of row.policies"
-                  (click)="openPolicyModal(policy.id)"
+                  (click)="openPolicyModal(policy)"
                   class="py-4 px-1 text-indigo-600 underline"
                 >
                   {{ policy }}
@@ -128,7 +129,7 @@
               <td
                 class="text-sm font-medium leading-5 whitespace-no-wrap border-b border-gray-200"
               >
-                <a (click)="openRemoveUserModal(row.name)"
+                <a (click)="openRemoveUserModal(row)"
                   ><svg
                     xmlns="http://www.w3.org/2000/svg"
                     class="w-6 h-6 text-red-600 hover:text-red-800"

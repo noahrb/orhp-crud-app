@@ -5,7 +5,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { DocumentationComponent } from './components/documentation/documentation.component';
 import { CrudExampleComponent } from './components/crud-example/crud-example.component';
 import { UserService } from './services/user.service';
 import { CreateModalComponent } from './components/crud-example/create-modal/create-modal.component';
@@ -18,7 +17,6 @@ import { CreatePolicyModalComponent } from './components/crud-example/create-pol
   declarations: [
     AppComponent,
     NavbarComponent,
-    DocumentationComponent,
     CrudExampleComponent,
     CreateModalComponent,
     RemoveUserComponent,

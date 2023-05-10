@@ -2,10 +2,10 @@ import { Address } from "./Address";
 import { Policy } from "./Policy";
  
 export interface User {
-  id: number,
+  id: string,
   name: string,
   email: string,
   phone: number,
-  policies: Array<Policy>,
-  addresses: Array<Address>,
+  policies: Array<string>,
+  addresses: Array<string>,
 }

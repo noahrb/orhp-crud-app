@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -20,7 +19,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/user")
 public class UserController {
 
@@ -46,10 +45,10 @@ public class UserController {
     public List<User> getAll() {
         return userService.findAll();
     }
-
-    // @DeleteMapping(value = "/{id}/category/{category}")
-    // public void delete(@PathVariable String id, @PathVariable String category) {
-    //     userService.delete(id, category);
-    // }
+    
+    @PostMapping(value = "/delete/{id}")
+    public void delete(@PathVariable String id) {
+        userService.delete(id);
+    }
 
 }

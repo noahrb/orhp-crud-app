@@ -17,7 +17,7 @@ export class EditUserModalComponent {
   @Output() closeModal = new EventEmitter<void>();
   @Input() modalOpen: any;
   @Input() user: User = {
-    id: 0,
+    id: '',
     name: '',
     email: '',
     phone: 0,
