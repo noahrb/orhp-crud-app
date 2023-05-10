@@ -1,6 +1,8 @@
 # orhp-crud-app
 Angular / Java spring app connecting to CosmosDB showcasing CRUD functionality
 
+Requires node 16+ / java 17 / maven
+
 To run locally: 
 cd to orhp-frontend
 run 'npm install' then 'ng serve' this will host the frontend application to localhost:4200
