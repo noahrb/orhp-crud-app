@@ -36,6 +36,11 @@ public class UserController {
         userService.saveUser(user);
     }
 
+    @PostMapping(value = "/update/{id}")
+    public void update(@PathVariable String id, @RequestBody User user) {
+        userService.updateUser(id, user);
+    }
+    
     @GetMapping(value = "/{id}")
     public Optional<User> get(@PathVariable String id) {
         return userService.findById(id);

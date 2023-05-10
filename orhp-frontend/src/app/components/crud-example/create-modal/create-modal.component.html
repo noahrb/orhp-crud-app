@@ -31,20 +31,20 @@
                   (ngSubmit)="onClickSubmit(userRegistration)"
                   method="POST"
                 >
-                <div>
-                  <label
-                    for="userid"
-                    class="block text-sm font-medium leading-6 text-gray-900"
-                    >Enter new user id:</label
-                  >
-                  <input
-                    id="userid"
-                    name="userid"
-                    type="text"
-                    required
-                    class="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                  />
-                </div>
+                  <div>
+                    <label
+                      for="userid"
+                      class="block text-sm font-medium leading-6 text-gray-900"
+                      >Enter new user id:</label
+                    >
+                    <input
+                      id="userid"
+                      name="userid"
+                      type="text"
+                      required
+                      class="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    />
+                  </div>
                   <div>
                     <label
                       for="name"
@@ -93,12 +93,11 @@
                     id="dropdownSearch"
                     class="z-10 bg-white rounded-lg shadow w-full"
                   >
-                    <!-- <label
-                        for="policy"
-                        class="block text-sm font-medium leading-6 text-gray-900 pt-2 pl-2"
-                        >Select Applicable Policies:</label
-                      >
-                      <div class="relative pl-2">
+                    <label
+                      for="policy"
+                      class="block text-sm font-medium leading-6 text-gray-900 pt-2 pl-2"
+                      >Select Applicable Policies:</label>
+                    <!-- <div class="relative pl-2">
                         <input
                           type="text"
                           id="input-group-search"
@@ -125,8 +124,8 @@
                           <label
                             for="checkbox-item-11"
                             class="w-full ml-2 text-sm font-medium text-gray-900 rounded"
-                            >{{ policy.id }} </label
-                          >
+                            >{{ policy.id }}
+                          </label>
                         </div>
                       </li>
                     </ul>

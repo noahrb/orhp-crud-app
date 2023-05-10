@@ -41,7 +41,7 @@ export class CreateModalComponent {
   public onClickSubmit(data: any) {
     this.loader = true;
     this.userService
-      .saveNewPerson(data.userid.value, data.email.value, data.name.value, data.phone.value, this.selectedPolicies)
+      .saveNewUser(data.userid.value, data.email.value, data.name.value, data.phone.value, this.selectedPolicies)
       .subscribe((res) => {
         console.log(res);
         this.loader = false;

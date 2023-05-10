@@ -38,6 +38,11 @@ public class PolicyController {
         policyService.savePolicy(policy);
     }
 
+    @PostMapping(value = "/update/{id}")
+    public void update(@PathVariable String id, @RequestBody Policy policy) {
+        policyService.updatePolicy(id, policy);
+    }
+    
     @GetMapping(value = "/{id}")
     public Optional<Policy> get(@PathVariable String id) {
         return policyService.findById(id);

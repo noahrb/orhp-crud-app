@@ -18,7 +18,7 @@ export class UserService {
     return this.http.get<User[]>(this.baseUrl + '/user');
   }
 
-  saveNewPerson(
+  saveNewUser(
     id: string,
     name: string,
     email: string,
@@ -26,6 +26,23 @@ export class UserService {
     policies: Array<String>
   ) {
     return this.http.post<User>(this.baseUrl + '/user', {
+      id: id,
+      name: name,
+      email: email,
+      phone: phone,
+      policies: policies,
+      addresses: [],
+    });
+  }
+
+  updateUser(
+    id: string,
+    name: string,
+    email: string,
+    phone: string,
+    policies: Array<String>
+  ) {
+    return this.http.post<User>(this.baseUrl + '/user/update/' + id, {
       id: id,
       name: name,
       email: email,

@@ -37,7 +37,7 @@ public class PolicyService {
 
     public void delete(String policyId) {
         repository.deleteById(policyId);
-        userService.removePolicyFromUsers(policyId);
+        userService.removePolicyFromAllUsers(policyId);
     }
 
     public void addUserToPolicies(ArrayList<String> policyIds, String userId) {
@@ -52,7 +52,7 @@ public class PolicyService {
         }
     }
 
-    public void removeUserFromPolicies(String userId) {
+    public void removeUserFromAllPolicies(String userId) {
         List<Policy> policies = findAll();
         for(Policy policy: policies) {
             ArrayList<String> users = policy.getUsers();
@@ -64,6 +64,54 @@ public class PolicyService {
             }
             policy.setUsers(users);
             repository.save(policy);
+        }
+    }
+
+    public void removeUserFromPolicies(String userId, List<String> policyIds) {
+        List<Policy> policies = findAll();
+        for(Policy policy: policies) {
+            if(policyIds.contains(policy.getId())) {
+                ArrayList<String> users = policy.getUsers();
+                for(String user : users) {
+                    if(user.equals(userId)) {
+                        users.remove(user);
+                        break;
+                    }
+                }
+                policy.setUsers(users);
+                repository.save(policy);
+            }
+        }
+    }
+
+    public void updatePolicy(String id, Policy policy) {
+        Optional<Policy> policyOptional = findById(id);
+        if(policyOptional.isPresent()) {
+            ArrayList<String> userIdsToAdd = new ArrayList<>();
+            ArrayList<String> userIdsToRemove = new ArrayList<>();
+
+            Policy policyToUpdate = policyOptional.get();
+            List<String> existingPolicyUsers = policyToUpdate.getUsers();
+            for(String user : existingPolicyUsers) {
+                if(!policy.getUsers().contains(user)) {
+                    userIdsToRemove.add(user);
+                    userService.removePolicyFromUsers(userIdsToRemove, id);
+                }
+            }
+
+            List<String> newPolicyUsers = policyToUpdate.getUsers();
+            for(String userId : newPolicyUsers) {
+                if(!existingPolicyUsers.contains(userId)) {
+                    userIdsToAdd.add(userId);
+                    userService.addPolicyToUsers(userIdsToAdd, id);
+                }
+            }
+
+            policyToUpdate.setMonthly_premium(policy.getMonthly_premium());
+            policyToUpdate.setDeductible(policy.getDeductible());
+            policyToUpdate.setAddresses(policy.getAddresses());
+            policyToUpdate.setUsers(policy.getUsers());
+            repository.save(policyToUpdate);
         }
     }
 }
