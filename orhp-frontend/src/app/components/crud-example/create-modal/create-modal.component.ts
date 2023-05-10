@@ -43,7 +43,6 @@ export class CreateModalComponent {
     this.userService
       .saveNewUser(data.userid.value, data.email.value, data.name.value, data.phone.value, this.selectedPolicies)
       .subscribe((res) => {
-        console.log(res);
         this.loader = false;
         this.clickCloseModal();
       });

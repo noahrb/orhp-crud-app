@@ -35,7 +35,6 @@ export class RemoveUserComponent {
   }
 
   public deleteUser(id: string): void {
-    console.log('userid from remove user ocmponent is ' + id);
     this.userService.deleteUser(id).subscribe((res) => {
       this.closeModal.emit();
     });

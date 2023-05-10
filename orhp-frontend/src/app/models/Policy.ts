@@ -1,9 +1,9 @@
 import { Address } from "./Address";
 
 export interface Policy {
-  id: number,
-  monthly_premium: number,
-  deductible: number,
+  id: string,
+  monthly_premium: string,
+  deductible: string,
   users: Array<string>,
   addresses: Array<string>
 }

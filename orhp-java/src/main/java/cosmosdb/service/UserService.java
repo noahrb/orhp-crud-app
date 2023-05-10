@@ -102,7 +102,7 @@ public class UserService {
                 }
             }
 
-            List<String> newUserPolicies = userToUpdate.getPolicies();
+            List<String> newUserPolicies = user.getPolicies();
             for(String policyId : newUserPolicies) {
                 if(!existingUserPolicies.contains(policyId)) {
                     policyIdsToAdd.add(policyId);

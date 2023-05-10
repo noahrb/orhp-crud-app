@@ -19,9 +19,9 @@ export class CrudExampleComponent {
   createPolicyModalOpen: boolean = false;
 
   activePolicy: Policy = {
-    id: 0,
-    monthly_premium: 0,
-    deductible: 0,
+    id: '',
+    monthly_premium: '',
+    deductible: '',
     addresses: [],
     users: [],
   };
@@ -75,13 +75,14 @@ export class CrudExampleComponent {
 
   public openPolicyModal(policy: string) {
     this.policyService.getPolicy(policy).subscribe((res: any) => {
-      this.activePolicy = res[0];
+      this.activePolicy = res;
       this.policyModalOpen = true;
     });
   }
 
   public closePolicyModal(): void {
     this.policyModalOpen = false;
+    this.refreshData();
   }
 
   public openEditUserModal(user: User) {

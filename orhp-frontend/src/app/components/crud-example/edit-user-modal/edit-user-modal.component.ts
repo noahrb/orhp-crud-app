@@ -44,7 +44,6 @@ export class EditUserModalComponent {
 
   public onClickSubmit(data: any) {
     this.loader = true;
-    console.log('submit', data.name.value, data.email.value, data.phone.value, this.selectedPolicies);
     this.userService
       .updateUser(this.user.id, data.email.value, data.name.value, data.phone.value, this.selectedPolicies)
       .subscribe((res) => {

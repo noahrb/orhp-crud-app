@@ -37,7 +37,6 @@ export class CreatePolicyModalComponent {
     this.policyService
       .saveNewPolicy(data.policyid.value, data.premium.value, data.deductible.value, this.selectedUsers)
       .subscribe((res) => {
-        console.log(res);
         this.loader = false;
         this.clickCloseModal();
       });
