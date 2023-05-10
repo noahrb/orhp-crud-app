@@ -20,4 +20,10 @@ describe('PolicyModalComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should emit close event when close button pressed', () => {
+    spyOn(component.closeModal, 'emit');
+    component.clickCloseModal();
+    expect(component.closeModal.emit).toHaveBeenCalled();
+  });
 });
