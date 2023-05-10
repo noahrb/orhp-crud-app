@@ -5,11 +5,11 @@ import { PolicyService } from 'src/app/services/policy.service';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
-  selector: 'app-create-modal',
-  templateUrl: './create-modal.component.html',
-  styleUrls: ['./create-modal.component.css'],
+  selector: 'app-create-user-modal',
+  templateUrl: './create-user-modal.component.html',
+  styleUrls: ['./create-user-modal.component.css'],
 })
-export class CreateModalComponent {
+export class CreateUserModalComponent {
   @Output() closeModal = new EventEmitter<void>();
   @Input() modalOpen: any;
   @Input() policies: Array<Policy> = [];

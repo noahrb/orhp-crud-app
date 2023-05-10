@@ -6,10 +6,10 @@ import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-policy-modal',
-  templateUrl: './policy-modal.component.html',
-  styleUrls: ['./policy-modal.component.css'],
+  templateUrl: './edit-policy-modal.component.html',
+  styleUrls: ['./edit-policy-modal.component.css'],
 })
-export class PolicyModalComponent {
+export class EditPolicyModalComponent {
   loader: boolean = false;
 
   @Output() closeModal = new EventEmitter<void>();

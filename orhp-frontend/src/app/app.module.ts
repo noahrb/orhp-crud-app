@@ -7,9 +7,9 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { CrudExampleComponent } from './components/crud-example/crud-example.component';
 import { UserService } from './services/user.service';
-import { CreateModalComponent } from './components/crud-example/create-modal/create-modal.component';
+import { CreateUserModalComponent } from './components/crud-example/create-user-modal/create-user-modal.component';
 import { RemoveUserComponent } from './components/crud-example/remove-user-modal/remove-user.component';
-import { PolicyModalComponent } from './components/crud-example/policy-modal/policy-modal.component';
+import { EditPolicyModalComponent } from './components/crud-example/edit-policy-modal/edit-policy-modal.component';
 import { EditUserModalComponent } from './components/crud-example/edit-user-modal/edit-user-modal.component';
 import { CreatePolicyModalComponent } from './components/crud-example/create-policy-modal/create-policy-modal.component';
 
@@ -18,9 +18,9 @@ import { CreatePolicyModalComponent } from './components/crud-example/create-pol
     AppComponent,
     NavbarComponent,
     CrudExampleComponent,
-    CreateModalComponent,
+    CreateUserModalComponent,
     RemoveUserComponent,
-    PolicyModalComponent,
+    EditPolicyModalComponent,
     EditUserModalComponent,
     CreatePolicyModalComponent
   ],

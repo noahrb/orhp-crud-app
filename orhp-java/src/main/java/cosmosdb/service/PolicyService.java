@@ -86,18 +86,15 @@ public class PolicyService {
 
     public void updatePolicy(String id, Policy policy) {
         Optional<Policy> policyOptional = findById(id);
-        System.out.println("******************* Updating policy: " + policyOptional.get());
         if (policyOptional.isPresent()) {
             ArrayList<String> userIdsToAdd = new ArrayList<>();
             ArrayList<String> userIdsToRemove = new ArrayList<>();
 
             Policy policyToUpdate = policyOptional.get();
             List<String> existingPolicyUsers = policyToUpdate.getUsers();
-            System.out.println("******************* Existing policy users: " + existingPolicyUsers);
             for (String user : existingPolicyUsers) {
                 if (!policy.getUsers().contains(user)) {
                     userIdsToRemove.add(user);
-                    System.out.println("***************** User ids to remove: " + userIdsToRemove);
                     userService.removePolicyFromUsers(userIdsToRemove, id);
                 }
             }
@@ -106,8 +103,6 @@ public class PolicyService {
             for (String userId : newPolicyUsers) {
                 if (!existingPolicyUsers.contains(userId)) {
                     userIdsToAdd.add(userId);
-                    System.out.println("******************* Adding user to policy: " + policyToUpdate.getId()
-                            + " user: " + userId);
                     userService.addPolicyToUsers(userIdsToAdd, id);
                 }
             }

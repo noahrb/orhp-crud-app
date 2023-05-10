@@ -23,11 +23,11 @@
       <div
         class="inline-block min-w-full overflow-hidden align-middle border-b border-gray-200 shadow sm:rounded-lg"
       >
-        <app-create-modal
+        <app-create-user-modal
           *ngIf="modalOpen"
           (closeModal)="closeModal()"
           [modalOpen]="modalOpen"
-        ></app-create-modal>
+        ></app-create-user-modal>
 
         <app-create-policy-modal
           *ngIf="createPolicyModalOpen"

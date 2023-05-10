@@ -1,0 +1,82 @@
+<mxfile host="app.diagrams.net" modified="2023-05-10T05:32:24.514Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36" etag="31QMhQIWBRUVOtaZB_hT" version="21.2.8" type="device">
+  <diagram name="Page-1" id="aSsiNVKqNUCBDumUSvIY">
+    <mxGraphModel dx="1070" dy="1111" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="7_EuFlxIP-V4QFvIXFhv-1" value="Frontend Components:&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7_EuFlxIP-V4QFvIXFhv-2" value="crud-example component:&lt;br&gt;&lt;br&gt;Core component tying together elements of the single-age-app.&amp;nbsp;" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="340" y="40" width="200" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="7_EuFlxIP-V4QFvIXFhv-3" value="create-user-modal-component:&lt;br&gt;&lt;br&gt;Popup modal that collects initial user information and gives the user the option to link to policies.&amp;nbsp;&lt;br&gt;&lt;br&gt;Inputs: userId, Full name, email address, phone number, linked policies." style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="30" y="190" width="200" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="7_EuFlxIP-V4QFvIXFhv-4" value="edit-user-modal-component:&lt;br&gt;&lt;br&gt;Popup modal that gives user the ability to modify information and policy linkages.&lt;br&gt;&lt;br&gt;Inputs: Full name, email address, phone number, linked policies.&amp;nbsp;" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="250" y="190" width="200" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="7_EuFlxIP-V4QFvIXFhv-6" value="create-policy-modal-component:&lt;br&gt;&lt;br&gt;Popup modal that gives user the ability to create policies.&amp;nbsp;&lt;br&gt;&lt;br&gt;Inputs: monthly premium, deductible, linked users.&amp;nbsp;" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="920" y="190" width="200" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="7_EuFlxIP-V4QFvIXFhv-7" value="edit-policy-modal-component:&lt;br&gt;&lt;br&gt;Popup modal that gives user the ability to modify policies.&amp;nbsp;&lt;br&gt;&lt;br&gt;Inputs: monthly premium, deductible, linked users.&amp;nbsp;" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="690" y="190" width="200" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="7_EuFlxIP-V4QFvIXFhv-8" value="remove-user-modal-component:&lt;br&gt;&lt;br&gt;Popup confirmation modal that confirms that a user would like to delete itself.&amp;nbsp;" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="470" y="195" width="200" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="7_EuFlxIP-V4QFvIXFhv-9" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;exitX=0;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="7_EuFlxIP-V4QFvIXFhv-2" target="7_EuFlxIP-V4QFvIXFhv-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="530" y="400" as="sourcePoint" />
+            <mxPoint x="580" y="350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7_EuFlxIP-V4QFvIXFhv-10" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.335;entryY=-0.014;entryDx=0;entryDy=0;exitX=0.14;exitY=1.01;exitDx=0;exitDy=0;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="7_EuFlxIP-V4QFvIXFhv-2" target="7_EuFlxIP-V4QFvIXFhv-4">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="350" y="150" as="sourcePoint" />
+            <mxPoint x="190" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7_EuFlxIP-V4QFvIXFhv-11" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.175;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryPerimeter=0;" edge="1" parent="1" source="7_EuFlxIP-V4QFvIXFhv-2" target="7_EuFlxIP-V4QFvIXFhv-8">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="378" y="151" as="sourcePoint" />
+            <mxPoint x="327" y="198" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7_EuFlxIP-V4QFvIXFhv-12" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0;entryDx=0;entryDy=0;exitX=0.75;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="7_EuFlxIP-V4QFvIXFhv-2" target="7_EuFlxIP-V4QFvIXFhv-7">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="450" y="150" as="sourcePoint" />
+            <mxPoint x="515" y="205" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7_EuFlxIP-V4QFvIXFhv-13" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0;entryDx=0;entryDy=0;exitX=1;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="7_EuFlxIP-V4QFvIXFhv-2" target="7_EuFlxIP-V4QFvIXFhv-6">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="500" y="150" as="sourcePoint" />
+            <mxPoint x="739" y="199" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7_EuFlxIP-V4QFvIXFhv-14" value="navbar-component:&amp;nbsp;&lt;br&gt;&lt;br&gt;Handles navbar on every screen (only one in this case). Hyperlinks crud-example to the /crud-example route which points to the crud-example component.&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="720" y="40" width="220" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="7_EuFlxIP-V4QFvIXFhv-15" value="Frontend Services:&amp;nbsp;" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="400" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7_EuFlxIP-V4QFvIXFhv-16" value="user.service.ts&lt;br&gt;&lt;br&gt;Handles the REST api connection to the java spring app.&amp;nbsp;&lt;br&gt;&lt;br&gt;base url: localhost:8080/user&lt;br&gt;&lt;br&gt;getUser(id)&lt;br&gt;&lt;br&gt;getAllUser()&lt;br&gt;&lt;br&gt;saveNewUser(&lt;br&gt;id, &lt;br&gt;name, &lt;br&gt;email, &lt;br&gt;phone, &lt;br&gt;policies)&lt;br&gt;&lt;br&gt;updateUser(&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;id,&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;name,&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;email,&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;phone,&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;policies)&lt;br&gt;&lt;br&gt;deleteUser(id)" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="180" y="400" width="220" height="450" as="geometry" />
+        </mxCell>
+        <mxCell id="7_EuFlxIP-V4QFvIXFhv-17" value="policy.service.ts&lt;br&gt;&lt;br&gt;Handles the REST api connection to the java spring app.&amp;nbsp;&lt;br&gt;&lt;br&gt;getPolicy(id)&lt;br&gt;&lt;br&gt;getAllPolicy()&lt;br&gt;&lt;br&gt;saveNewPolicy(&lt;br&gt;id, &lt;br&gt;premium, &lt;br&gt;deductible, &lt;br&gt;users)&lt;br&gt;&lt;br&gt;updatePolicy(&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;id,&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;premium,&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;deductible,&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;users)" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="425" y="400" width="220" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="7_EuFlxIP-V4QFvIXFhv-18" value="Models:&amp;nbsp;" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="30" y="900" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="7_EuFlxIP-V4QFvIXFhv-19" value="User.ts&lt;br&gt;&lt;br&gt;&lt;div style=&quot;color: rgb(166, 172, 205); background-color: rgb(41, 45, 62); font-family: &amp;quot;Operator Mono Lig Light&amp;quot;, Menlo, Monaco, &amp;quot;Courier New&amp;quot;, monospace; line-height: 18px;&quot;&gt;&lt;div&gt;export &lt;span style=&quot;color: #c792ea;&quot;&gt;interface&lt;/span&gt; &lt;span style=&quot;color: #ffcb6b;&quot;&gt;User&lt;/span&gt; &lt;span style=&quot;color: #89ddff;&quot;&gt;{&lt;/span&gt;&lt;/div&gt;&lt;div&gt;  id&lt;span style=&quot;color: #89ddff;&quot;&gt;:&lt;/span&gt; &lt;span style=&quot;color: #ffcb6b;&quot;&gt;string&lt;/span&gt;&lt;span style=&quot;color: #89ddff;&quot;&gt;,&lt;/span&gt;&lt;/div&gt;&lt;div&gt;  name&lt;span style=&quot;color: #89ddff;&quot;&gt;:&lt;/span&gt; &lt;span style=&quot;color: #ffcb6b;&quot;&gt;string&lt;/span&gt;&lt;span style=&quot;color: #89ddff;&quot;&gt;,&lt;/span&gt;&lt;/div&gt;&lt;div&gt;  email&lt;span style=&quot;color: #89ddff;&quot;&gt;:&lt;/span&gt; &lt;span style=&quot;color: #ffcb6b;&quot;&gt;string&lt;/span&gt;&lt;span style=&quot;color: #89ddff;&quot;&gt;,&lt;/span&gt;&lt;/div&gt;&lt;div&gt;  phone&lt;span style=&quot;color: #89ddff;&quot;&gt;:&lt;/span&gt; &lt;span style=&quot;color: #ffcb6b;&quot;&gt;number&lt;/span&gt;&lt;span style=&quot;color: #89ddff;&quot;&gt;,&lt;/span&gt;&lt;/div&gt;&lt;div&gt;  policies&lt;span style=&quot;color: #89ddff;&quot;&gt;:&lt;/span&gt; &lt;span style=&quot;color: #ffcb6b;&quot;&gt;Array&lt;/span&gt;&lt;span style=&quot;color: #89ddff;&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&quot;color: #ffcb6b;&quot;&gt;string&lt;/span&gt;&lt;span style=&quot;color: #89ddff;&quot;&gt;&amp;gt;,&lt;/span&gt;&lt;/div&gt;&lt;div&gt;  addresses&lt;span style=&quot;color: #89ddff;&quot;&gt;:&lt;/span&gt; &lt;span style=&quot;color: #ffcb6b;&quot;&gt;Array&lt;/span&gt;&lt;span style=&quot;color: #89ddff;&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&quot;color: #ffcb6b;&quot;&gt;string&lt;/span&gt;&lt;span style=&quot;color: #89ddff;&quot;&gt;&amp;gt;,&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: #89ddff;&quot;&gt;}&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="185" y="880" width="240" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="7_EuFlxIP-V4QFvIXFhv-20" value="Policy.ts&lt;br&gt;&lt;br&gt;&lt;div style=&quot;color: rgb(166, 172, 205); background-color: rgb(41, 45, 62); font-family: &amp;quot;Operator Mono Lig Light&amp;quot;, Menlo, Monaco, &amp;quot;Courier New&amp;quot;, monospace; line-height: 18px;&quot;&gt;&lt;div&gt;export &lt;span style=&quot;color: #c792ea;&quot;&gt;interface&lt;/span&gt; &lt;span style=&quot;color: #ffcb6b;&quot;&gt;Policy&lt;/span&gt; &lt;span style=&quot;color: #89ddff;&quot;&gt;{&lt;/span&gt;&lt;/div&gt;&lt;div&gt;  id&lt;span style=&quot;color: #89ddff;&quot;&gt;:&lt;/span&gt; &lt;span style=&quot;color: #ffcb6b;&quot;&gt;string&lt;/span&gt;&lt;span style=&quot;color: #89ddff;&quot;&gt;,&lt;/span&gt;&lt;/div&gt;&lt;div&gt;  monthly_premium&lt;span style=&quot;color: #89ddff;&quot;&gt;:&lt;/span&gt; &lt;span style=&quot;color: #ffcb6b;&quot;&gt;string&lt;/span&gt;&lt;span style=&quot;color: #89ddff;&quot;&gt;,&lt;/span&gt;&lt;/div&gt;&lt;div&gt;  deductible&lt;span style=&quot;color: #89ddff;&quot;&gt;:&lt;/span&gt; &lt;span style=&quot;color: #ffcb6b;&quot;&gt;string&lt;/span&gt;&lt;span style=&quot;color: #89ddff;&quot;&gt;,&lt;/span&gt;&lt;/div&gt;&lt;div&gt;  users&lt;span style=&quot;color: #89ddff;&quot;&gt;:&lt;/span&gt; &lt;span style=&quot;color: #ffcb6b;&quot;&gt;Array&lt;/span&gt;&lt;span style=&quot;color: #89ddff;&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&quot;color: #ffcb6b;&quot;&gt;string&lt;/span&gt;&lt;span style=&quot;color: #89ddff;&quot;&gt;&amp;gt;,&lt;/span&gt;&lt;/div&gt;&lt;div&gt;  addresses&lt;span style=&quot;color: #89ddff;&quot;&gt;:&lt;/span&gt; &lt;span style=&quot;color: #ffcb6b;&quot;&gt;Array&lt;/span&gt;&lt;span style=&quot;color: #89ddff;&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&quot;color: #ffcb6b;&quot;&gt;string&lt;/span&gt;&lt;span style=&quot;color: #89ddff;&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: #89ddff;&quot;&gt;}&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="450" y="880" width="220" height="210" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
