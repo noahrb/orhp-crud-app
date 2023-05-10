@@ -19,27 +19,27 @@
                 class="text-base font-semibold leading-6 text-gray-900"
                 id="modal-title"
               >
-                Create User
+                Create Policy
               </h3>
               <div class="mt-2">
                 <p class="text-sm text-gray-500">
-                  Please fill in the forms below to create your user:
+                  Please fill in the forms below to create your policy:
                 </p>
                 <form
-                  #userRegistration
+                  #policyRegistration
                   class="space-y-2 pt-4"
-                  (ngSubmit)="onClickSubmit(userRegistration)"
+                  (ngSubmit)="onClickSubmit(policyRegistration)"
                   method="POST"
                 >
                 <div>
                   <label
-                    for="userid"
+                    for="policyid"
                     class="block text-sm font-medium leading-6 text-gray-900"
-                    >Enter new user id:</label
+                    >Enter new policy id:</label
                   >
                   <input
-                    id="userid"
-                    name="userid"
+                    id="policyid"
+                    name="policyid"
                     type="text"
                     required
                     class="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
@@ -47,13 +47,13 @@
                 </div>
                   <div>
                     <label
-                      for="name"
+                      for="premium"
                       class="block text-sm font-medium leading-6 text-gray-900"
-                      >Full Name</label
+                      >Monthly Premium</label
                     >
                     <input
-                      id="name"
-                      name="name"
+                      id="premium"
+                      name="premium"
                       type="text"
                       required
                       class="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
@@ -61,28 +61,13 @@
                   </div>
                   <div>
                     <label
-                      for="email"
+                      for="deductible"
                       class="block text-sm font-medium leading-6 text-gray-900"
-                      >Email address</label
+                      >Deductible</label
                     >
                     <input
-                      id="email"
-                      name="email"
-                      type="email"
-                      autocomplete="email"
-                      required
-                      class="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                    />
-                  </div>
-                  <div>
-                    <label
-                      for="phone"
-                      class="block text-sm font-medium leading-6 text-gray-900"
-                      >Phone Number</label
-                    >
-                    <input
-                      id="phone"
-                      name="phone"
+                      id="deductible"
+                      name="deductible"
                       type="text"
                       required
                       class="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
@@ -93,25 +78,11 @@
                     id="dropdownSearch"
                     class="z-10 bg-white rounded-lg shadow w-full"
                   >
-                    <!-- <label
-                        for="policy"
-                        class="block text-sm font-medium leading-6 text-gray-900 pt-2 pl-2"
-                        >Select Applicable Policies:</label
-                      >
-                      <div class="relative pl-2">
-                        <input
-                          type="text"
-                          id="input-group-search"
-                          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-2 py-1"
-                          placeholder="Search policies"
-                          [value]="searchValue"
-                        />
-                      </div> -->
                     <ul
                       class="h-48 px-3 pb-3 overflow-y-auto text-sm text-gray-700"
                       aria-labelledby="dropdownSearchButton"
                     >
-                      <li *ngFor="let policy of policies">
+                      <li *ngFor="let user of users">
                         <div
                           class="flex items-center p-2 rounded hover:bg-gray-100"
                         >
@@ -119,13 +90,13 @@
                             id="checkbox-item-11"
                             type="checkbox"
                             value=""
-                            (click)="selectOption(policy)"
+                            (click)="selectOption(user)"
                             class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
                           />
                           <label
                             for="checkbox-item-11"
                             class="w-full ml-2 text-sm font-medium text-gray-900 rounded"
-                            >{{ policy.id }} </label
+                            >{{ user.id }} </label
                           >
                         </div>
                       </li>
@@ -140,7 +111,7 @@
         </div>
         <div class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
           <button
-            (click)="onClickSubmit(userRegistration)"
+            (click)="onClickSubmit(policyRegistration)"
             type="button"
             class="inline-flex w-full justify-center rounded-md bg-sky-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 sm:ml-3 sm:w-auto"
           >

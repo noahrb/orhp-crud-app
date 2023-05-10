@@ -26,6 +26,8 @@ export class PolicyModalComponent {
     id: 0,
     monthly_premium: 0,
     deductible: 0,
+    addresses: [],
+    users: [],
   };
   
   constructor(private userService: UserService) {}
@@ -36,13 +38,13 @@ export class PolicyModalComponent {
   }
 
   public onClickSubmit(data: any) {
-    this.loader = true;
-    this.userService
-      .saveNewPerson(data.email.value, data.name.value, data.phone.value)
-      .subscribe((res) => {
-        console.log(res);
-        this.loader = false;
-        this.clickCloseModal();
-      });
+  //   this.loader = true;
+  //   this.userService
+  //     .saveNewPerson(data.email.value, data.name.value, data.phone.value, [this.policy.id.toString()])
+  //     .subscribe((res) => {
+  //       console.log(res);
+  //       this.loader = false;
+  //       this.clickCloseModal();
+  //     });
   }
 }

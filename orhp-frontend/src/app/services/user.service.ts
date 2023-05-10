@@ -14,11 +14,14 @@ export class UserService {
     return this.http.get<User[]>(this.baseUrl + "/user");
   }
 
-  saveNewPerson(name: string, email: string, phone: string) {
+  saveNewPerson(id: string, name: string, email: string, phone: string, policies: Array<String>) {
     return this.http.post<User>(this.baseUrl + "/user", {
+      id: id,
       name: name,
       email: email,
       phone: phone,
+      policies: policies,
+      addresses: []
     });
   }
 }

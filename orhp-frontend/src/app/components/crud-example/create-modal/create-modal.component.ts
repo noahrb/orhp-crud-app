@@ -21,7 +21,7 @@ export class CreateModalComponent {
   loader: boolean = false;
   searchValue: string = '';
   filteredPolicies$: Observable<Array<Policy>> = new Observable();
-  selectedPolicies: Array<Policy> = [];
+  selectedPolicies: Array<String> = [];
 
   constructor(private userService: UserService, private policyService: PolicyService) {
     this.policyService.getAllPolicy().subscribe((res: any) => {
@@ -41,7 +41,7 @@ export class CreateModalComponent {
   public onClickSubmit(data: any) {
     this.loader = true;
     this.userService
-      .saveNewPerson(data.email.value, data.name.value, data.phone.value)
+      .saveNewPerson(data.userid.value, data.email.value, data.name.value, data.phone.value, this.selectedPolicies)
       .subscribe((res) => {
         console.log(res);
         this.loader = false;
@@ -50,11 +50,11 @@ export class CreateModalComponent {
   }
 
   public selectOption(policy: Policy) {
-    if(this.selectedPolicies.includes(policy)) {
-      this.selectedPolicies.splice(this.selectedPolicies.indexOf(policy), 1);
+    if(this.selectedPolicies.includes(policy.id.toString())) {
+      this.selectedPolicies.splice(this.selectedPolicies.indexOf(policy.id.toString()), 1);
       return;
     } else {
-      this.selectedPolicies.push(policy);
+      this.selectedPolicies.push(policy.id.toString());
     }
   }
 }

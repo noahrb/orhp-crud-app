@@ -35,12 +35,12 @@ export class EditUserModalComponent {
 
   public onClickSubmit(data: any) {
     this.loader = true;
-    this.userService
-      .saveNewPerson(data.email.value, data.name.value, data.phone.value)
-      .subscribe((res) => {
-        console.log(res);
-        this.loader = false;
-        this.clickCloseModal();
-      });
+  //   this.userService
+  //     .saveNewPerson(data.email.value, data.name.value, data.phone.value, this.user.policies.map((policy) => policy.id.toString()))
+  //     .subscribe((res) => {
+  //       console.log(res);
+  //       this.loader = false;
+  //       this.clickCloseModal();
+  //     });
   }
 }

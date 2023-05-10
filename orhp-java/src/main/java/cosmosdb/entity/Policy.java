@@ -23,5 +23,5 @@ public class Policy {
 
     private ArrayList<String> addresses;
 
-    private ArrayList<User> users;
+    private ArrayList<String> users;
 }

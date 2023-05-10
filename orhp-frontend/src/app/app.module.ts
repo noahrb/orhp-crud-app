@@ -12,6 +12,7 @@ import { CreateModalComponent } from './components/crud-example/create-modal/cre
 import { RemoveUserComponent } from './components/crud-example/remove-user-modal/remove-user.component';
 import { PolicyModalComponent } from './components/crud-example/policy-modal/policy-modal.component';
 import { EditUserModalComponent } from './components/crud-example/edit-user-modal/edit-user-modal.component';
+import { CreatePolicyModalComponent } from './components/crud-example/create-policy-modal/create-policy-modal.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { EditUserModalComponent } from './components/crud-example/edit-user-moda
     CreateModalComponent,
     RemoveUserComponent,
     PolicyModalComponent,
-    EditUserModalComponent
+    EditUserModalComponent,
+    CreatePolicyModalComponent
   ],
   imports: [
     BrowserModule,

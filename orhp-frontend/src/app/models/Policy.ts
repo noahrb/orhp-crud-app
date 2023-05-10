@@ -4,5 +4,6 @@ export interface Policy {
   id: number,
   monthly_premium: number,
   deductible: number,
-  addresses: ArrayList<Address>
+  users: Array<String>,
+  addresses: Array<String>
 }

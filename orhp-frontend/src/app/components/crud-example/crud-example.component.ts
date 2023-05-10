@@ -8,7 +8,7 @@ import { UserService } from 'src/app/services/user.service';
 @Component({
   selector: 'app-crud-example',
   templateUrl: './crud-example.component.html',
-  styleUrls: ['./crud-example.component.css']
+  styleUrls: ['./crud-example.component.css'],
 })
 export class CrudExampleComponent {
   data: User[] = [];
@@ -16,9 +16,15 @@ export class CrudExampleComponent {
   removeUserModalOpen: boolean = false;
   policyModalOpen: boolean = false;
   editUserModalOpen: boolean = false;
+  createPolicyModalOpen: boolean = false;
 
   activePolicy: Policy = {
-    id: 0, monthly_premium: 0, deductible: 0 };
+    id: 0,
+    monthly_premium: 0,
+    deductible: 0,
+    addresses: [],
+    users: [],
+  };
 
   activeUser: User = {
     id: 0,
@@ -31,13 +37,18 @@ export class CrudExampleComponent {
   policyService: any;
 
   constructor(private userService: UserService, policyService: PolicyService) {
-    userService.getAllUser().subscribe(data => {
+    userService.getAllUser().subscribe((data) => {
       this.data = data;
     });
     this.policyService = policyService;
-   }
+  }
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  private refreshData(): void {
+    this.userService.getAllUser().subscribe((data) => {
+      this.data = data;
+    });
   }
 
   public openModal(): void {
@@ -46,6 +57,7 @@ export class CrudExampleComponent {
 
   public closeModal(): void {
     this.modalOpen = false;
+    this.refreshData();
   }
 
   public openRemoveUserModal(name: string) {
@@ -62,11 +74,6 @@ export class CrudExampleComponent {
       console.log(this.activePolicy);
       this.policyModalOpen = true;
     });
-    
-    // this.deductible = policy.deductible;
-    // this.activePolicy = policy;
-    // this.policyModalOpen = true;
-    // console.log(this.deductible);
   }
 
   public closePolicyModal(): void {
@@ -80,6 +87,15 @@ export class CrudExampleComponent {
 
   public closeEditUserModal(): void {
     this.editUserModalOpen = false;
+    this.refreshData();
   }
 
+  public openCreatePolicyModal(): void {
+    this.createPolicyModalOpen = true;
+  }
+
+  public closeCreatePolicyModal(): void {
+    this.createPolicyModalOpen = false;
+    this.refreshData();
+  }
 }

@@ -8,7 +8,13 @@
         (click)="openModal()"
         class="px-4 py-2 rounded-md bg-sky-500 text-sky-100 hover:bg-sky-600"
       >
-        Create Post
+        Create User
+      </button>
+      <button
+        (click)="openCreatePolicyModal()"
+        class="ml-2 px-4 py-2 rounded-md bg-sky-500 text-sky-100 hover:bg-sky-600"
+      >
+        Create Policy
       </button>
     </div>
   </div>
@@ -22,6 +28,12 @@
           (closeModal)="closeModal()"
           [modalOpen]="modalOpen"
         ></app-create-modal>
+
+        <app-create-policy-modal
+          *ngIf="createPolicyModalOpen"
+          (closeModal)="closeCreatePolicyModal()"
+          [modalOpen]="createPolicyModalOpen"
+        ></app-create-policy-modal>
 
         <app-remove-user-modal
           *ngIf="removeUserModalOpen"
