@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CreatePolicyModalComponent } from './create-policy-modal.component';
+import { UserService } from 'src/app/services/user.service';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('CreatePolicyModalComponent', () => {
   let component: CreatePolicyModalComponent;
@@ -8,6 +10,8 @@ describe('CreatePolicyModalComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [ HttpClientTestingModule ],
+      providers: [ UserService ],
       declarations: [ CreatePolicyModalComponent ]
     })
     .compileComponents();

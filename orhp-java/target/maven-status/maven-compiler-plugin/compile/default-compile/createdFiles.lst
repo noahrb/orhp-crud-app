@@ -1,0 +1,14 @@
+cosmosdb/service/UserService.class
+cosmosdb/controller/AddressController.class
+cosmosdb/repository/UserRepository.class
+cosmosdb/entity/Policy.class
+cosmosdb/config/AzureCosmosDbConfiguration.class
+cosmosdb/service/PolicyService.class
+cosmosdb/service/AddressService.class
+cosmosdb/repository/PolicyRepository.class
+cosmosdb/controller/PolicyController.class
+cosmosdb/controller/UserController.class
+cosmosdb/repository/AddressRepository.class
+cosmosdb/entity/Address.class
+cosmosdb/AzureCosmosDbApplication.class
+cosmosdb/entity/User.class
